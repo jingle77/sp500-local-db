@@ -26,4 +26,48 @@ Prerequisites
 1. Clone and Create repository 
 ```bash
 git clone https://github.com/jingle77/sp500-local-db
+cd sp500-local-db
+
+# Create Virtual Environment
+python -m venv .venv
+
+# macOS/Linux
+source .venv/bin/activate
+
+# Windows PowerShell
+.\.venv\Scripts\activate
 ```
+
+2. Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+3. Configure Environment
+```bash
+cp .env.example .env
+# edit .env and set API_KEY
+# you can also edit REQUESTS_PER_MINUTE here to be within your API plan's threshold
+# API_KEY = YOUR_FMP_API_KEY
+# REQUESTS_PER_MINUTE = 700
+```
+
+4. Usage (Initial and Subsequent Runs are recommended to be completed in this order)
+```bash
+# 1) Bootstrap constituents + views
+python main.py
+
+# 2) Incremental prices (per symbol)
+python prices.py
+
+# 3) Incremental fundamentals (per dataset, per symbol)
+python fundamentals.py
+
+# 4) Quick analytics & health snapshot
+python sample_queries.py
+
+# 5) Tests
+pytest -v
+```
+---
