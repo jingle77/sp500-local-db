@@ -9,7 +9,7 @@ A lightweight local data warehouse for pricing, financial, and fundamental data 
 - **Local Lakehouse:** Columnar Parquet files on disk, queryable via DuckDB
 - **Incremental Upserts:** Per Symbol and no full redownloads
 - **Idempotent writes:** atomic temp-file + rename to prevent corruption
-- **Parallel Downloads:** Parralel Programing with ThreadPoolExecutor with a minute rate limiter
+- **Parallel Downloads:** Parallel Programming with ThreadPoolExecutor with a minute rate limiter
 - **Progress Bars:** via tqdm module
 - **Sample queries:** via sample_queries.py file
 ---
