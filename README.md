@@ -72,10 +72,8 @@ python prices.py
 # 3) Incremental fundamentals (per dataset, per symbol)
 python fundamentals.py
 
-# 4) Quick analytics & health snapshot
-python sample_queries.py
-
-# 5) Tests
+# 4) Tests
 pytest -v
-```
----
+
+# 5) Quick analytics & health snapshot
+python sample_queries.py
